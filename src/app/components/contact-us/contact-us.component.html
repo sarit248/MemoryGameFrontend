@@ -1,0 +1,64 @@
+<div class="flex-container">
+  <div class="contact-us">
+    <div class="contact">
+      <h4>Get in Touch</h4>
+      <h5>Please fill out the form and we'll be in touch soon</h5>
+      <form #myForm="ngForm" (ngSubmit)="send(); myForm.reset()">
+
+
+        <div>
+          <mat-form-field>
+            <input matInput type="text" name="phone" ngModel pattern="^\s*(?:\+?\d{1,3})?[- (]*\d{3}(?:[- )]*\d{3})?[- ]*\d{4}(?: *[x/#]\d+)?\s*$"
+              placeholder="phone number..." [(ngModel)]="contact.phone" phone required #phone="ngModel" />
+          </mat-form-field>
+          <span *ngIf="phone.dirty">Invalid / Missing Phone.</span>
+        </div>
+
+        <!-- <div>
+          <mat-form-field>
+            <input matInput type="
+            text" name="phone" placeholder="phone number..." [(ngModel)]="contact.phone" phone required #phone="ngModel" />
+          </mat-form-field>
+          <span *ngIf="phone.dirty && phone.invalid">Invalid / Missing Phone.</span>
+        </div> -->
+
+        <!-- 
+        <div>
+          <mat-form-field> -->
+        <!-- <input matInput type="email" name="email" [(ngModel)]="contact.email" placeholder="Email..." email required -->
+        <!-- <input matInput type="email" name="email" [(ngModel)]="contact.email" placeholder="Email..." #email="ngModel"
+              [email]="true" />
+          </mat-form-field>
+          <span *ngIf="email.dirty && email.invalid">Invalid Email.</span>
+        </div> -->
+
+        <div>
+          <mat-form-field>
+            <input matInput type="email" name="email" [(ngModel)]="contact.email" pattern="^[\w.]+@[\w.]+\.[.a-zA-Z]+$"
+              placeholder="Email..." autofocus #email="ngModel" ngModel [email]="true" />
+          </mat-form-field>
+          <span *ngIf="email.dirty && email.invalid">Invalid Email.</span>
+        </div>
+
+
+
+        <div>
+          <mat-form-field>
+            <textarea matInput type="text" name="message" [(ngModel)]="contact.message" placeholder="Message..."
+              required #message="ngModel"></textarea>
+          </mat-form-field>
+          <span *ngIf="message.dirty && message.invalid">Missing Message.</span>
+        </div>
+
+        <div>
+          <!-- <button type="submit" [disabled]="myForm.form.invalid">Go-Ahead</button> -->
+
+          <div><button>Go-Ahead</button></div>
+
+          <!-- <button (click)="reference.value=''">Clear</button> -->
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

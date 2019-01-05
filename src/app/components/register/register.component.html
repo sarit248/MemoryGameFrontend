@@ -1,0 +1,59 @@
+<div class="flex-container">
+  <div class="sign-up">
+    <div class="sign">
+      <h4>Sign-up</h4>
+      <h5>Join our community today!</h5>
+      <h6>(Please write in english)</h6>
+      <form #myForm="ngForm" (ngSubmit)="send()">
+        <!-- <form [formGroup]="registerForm" (ngSubmit)="send()"> -->
+
+        <div>
+          <mat-form-field>
+            <input matInput type="text" name="full name" placeholder="Full Name..." autofocus required [(ngModel)]="user.fullName"
+              #fullName="ngModel" pattern="[a-zA-Z ]*" minlength="5" maxlength="25" />
+          </mat-form-field>
+          <span *ngIf="fullName.dirty && fullName.invalid"> Invalid Full Name.</span>
+        </div>
+
+
+        <div>
+          <mat-form-field>
+            <input matInput type="date" name="birthdate" placeholder="Birth date..." [(ngModel)]="user.dateOfBirth"
+              #birthDate="ngModel" />
+          </mat-form-field>
+          <span *ngIf="birthDate.dirty && birthDate.invalid">Missing Birthdate.</span>
+        </div>
+
+        <div>
+          <mat-form-field>
+            <input matInput type="text" name="User Name" placeholder="User Name..." autofocus required [(ngModel)]="user.userName"
+              #userName="ngModel" />
+          </mat-form-field>
+          <!-- <span *ngIf="!user.userName">Missing User Name.</span> -->
+          <span *ngIf="userName.dirty && userName.invalid">Missing User Name.</span>
+        </div>
+
+        <div>
+          <mat-form-field>
+            <!-- <input matInput type="email" name="email" [(ngModel)]="user.email" placeholder="Email..." email required -->
+            <input matInput type="email" name="email" [(ngModel)]="user.email" pattern="^[\w.]+@[\w.]+\.[.a-zA-Z]+$"
+              placeholder="Email..." autofocus #email="ngModel" ngModel [email]="true" />
+          </mat-form-field>
+          <span *ngIf="email.dirty && email.invalid">Invalid Email.</span>
+        </div>
+
+
+        <div>
+          <mat-form-field>
+            <input matInput type="password" name="Password" placeholder="Password..." autofocus required [(ngModel)]="user.password"
+              #password="ngModel" />
+          </mat-form-field>
+          <!-- <span *ngIf="!user.password">Missing Password.</span> -->
+          <span *ngIf="password.dirty && password.invalid">Missing Password.</span>
+        </div>
+
+        <div><button>Go-Ahead</button></div>
+      </form>
+    </div>
+  </div>
+</div>

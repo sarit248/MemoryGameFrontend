@@ -1,0 +1,16 @@
+<div class="userResult">
+  <p class="text-black">Steps: {{stepsCounter}}</p>
+  <p class="text-black">Time: <app-clock></app-clock>
+</div>
+
+<div class="memory-game">
+  <div class="memory-card" id="{{image.imageName}}" *ngFor="let image of images" (click)="pickCard($event, image)">
+    <div [hidden]="image.isUncovered">
+      <img class="front-face" src="assets/images/cardsImages/{{ image.imageName }}" height="159px" width="150px" alt="Memory Card" />
+
+      <img class="back-face" src="assets/images/cardsImages/card.jpg" height="159px" width="150px" alt="Memory Card" />
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn-Newgame btn btn-danger" (click)="refresh()">New Game</button>

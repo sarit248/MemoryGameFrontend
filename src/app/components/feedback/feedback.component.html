@@ -1,0 +1,43 @@
+<div class="flex-container">
+  <div class="your-feedback">
+    <div class="feedback">
+      <h4>Feedback</h4>
+      <h5>Please write down your feedbck!</h5>
+      <form #myForm="ngForm" (ngSubmit)="send()">
+
+        <!-- <div>
+          <mat-form-field>
+            <input matInput type="text" name="full name" placeholder="Full Name..." autofocus required [(ngModel)]="feedback.userFullName"
+              #fullName="ngModel" />
+          </mat-form-field>
+          <span *ngIf="fullName.dirty && fullName.invalid">Missing Full Name.</span>
+        </div> -->
+
+
+        <!-- <label for="story">'Please write your feedback':</label> -->
+
+        <!-- <div>
+          <mat-form-field>
+            <textarea matInput type="text" name="message" [(ngModel)]="feedback.feedbackText" rows="10" cols="25"
+              #feedbackMessage="ngModel">
+It was a dark and stormy night...
+</textarea>
+          </mat-form-field>
+          <span *ngIf="feedbackMessage.dirty && feedbackMessage.invalid">Missing Feedback.</span>
+        </div> -->
+
+
+        <div>
+          <mat-form-field>
+            <textarea matInput type="text" name="message" rows="5" cols="45" [(ngModel)]="feedback.feedbackText"
+              placeholder=" Your Feedback..." required #feedbackMessage="ngModel"></textarea>
+          </mat-form-field>
+          <div *ngIf="feedbackMessage.dirty && feedbackMessage.invalid">Missing Feedback.</div>
+        </div>
+
+
+        <div><button>Go-Ahead</button></div>
+      </form>
+    </div>
+  </div>
+</div>
