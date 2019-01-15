@@ -10,7 +10,6 @@
               #userName="ngModel" />
           </mat-form-field>
           <span *ngIf="userName.dirty && userName.invalid">Missing User Name.</span>
-          <!-- <span *ngIf="!user.userName">Missing User Name.</span> -->
         </div>
         <div>
           <mat-form-field>
@@ -19,10 +18,7 @@
           </mat-form-field>
           <span *ngIf="password.dirty && password.invalid">Missing Password.</span>
         </div>
-
         <div><button>Go-Ahead</button></div>
-
-        <!-- <div><button [disabled]="myForm.form.invalid">Go-Ahead</button></div> -->
       </form>
     </div>
   </div>

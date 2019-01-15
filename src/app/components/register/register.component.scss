@@ -1,65 +1,59 @@
 .flex-container {
-  display: flex;
-  flex-direction: row-reverse;
-  background-image: url('../../../assets/images/home-page-2.jpg');
-  background-repeat: no-repeat;
-  background-size: 120% 120%;
-  height: 120%;
+    display: flex;
+    flex-direction: row-reverse;
+    background-image: url('../../../assets/images/home-page-2.jpg');
+    background-repeat: no-repeat;
+    background-size: 120% 120%;
+    height: 120%;
 }
 
-.flex-container > div {
-  float: right;
-  height: -webkit-fill-available;
-  background-color: white;
-  width: 40%;
+.flex-container>div {
+    float: right;
+    height: -webkit-fill-available;
+    background-color: white;
+    width: 40%;
 }
+
 .sign {
-  color: #008cba;
-  font-family: Arial;
-  font-weight: bold;
-  text-align: center;
-  margin-left: auto;
-  // margin-top: 20%;
-  margin-top: 6%;
+    color: #008cba;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: center;
+    margin-left: auto;
+    margin-top: 6%;
 }
-
 
 form {
-  width: 100%;
-  text-align: center;
+    width: 100%;
+    text-align: center;
 }
 
 input,
 button,
 textarea {
-  width: 400px;
-  font-size: medium;
-  margin: 5px;
+    width: 400px;
+    font-size: medium;
+    margin: 5px;
 }
 
 button {
-  background-color: lightblue;
-  color: #008cba;
-  border: 2px lightblue;
-  border-radius: 10px;
-  width: 300px;
-  font-weight: bold;
+    background-color: lightblue;
+    color: #008cba;
+    border: 2px lightblue;
+    border-radius: 10px;
+    width: 300px;
+    font-weight: bold;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 402px) {
+@media only screen and (max-width: 768px) {
+    .flex-container>div {
+        width: 100%;
+        background-color: white;
+    }
+}
 
-  .sign-up {
-    background-color: pink;
-  
-  }
-
-  // button{
-
-  // }
-
-  .sign{
-    color: lightblue;
-    font-family: Arial;
-    font-weight: bold;
-  }
+@media only screen and (min-width: 768px) and (max-width:1024px) {
+    .flex-container {
+        background-size: 123% 93%;
+    }
 }

@@ -1,18 +1,24 @@
-
-.GameResults-headline{
+.GameResults-headline {
     margin-left: 15%;
-    color:white;
-    font-family:"Open Sans", "Segoe UI", Tahoma, sans-serif;
-
+    color: white;
+    font-family: "Open Sans", "Segoe UI", Tahoma, sans-serif;
 }
 
-.table-wrapper-scroll-y{
-  margin-top: 10px;
-  width: 70%;
-  margin: 0 auto;
-  height: 74.5vh;
-  overflow-y: scroll;
-  font-family:"Open Sans", "Segoe UI", Tahoma, sans-serif;
-
+.table-wrapper-scroll-y {
+    margin-top: 10px;
+    width: 83%;
+    margin: 0 auto;
+    height: 74.5vh;
+    overflow-y: scroll;
+    font-family: "Open Sans", "Segoe UI", Tahoma, sans-serif;
 }
 
+.table {
+    overflow-x: auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .table-dark {
+        display: block;
+    }
+}

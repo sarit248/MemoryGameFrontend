@@ -49,7 +49,7 @@ export class GameComponent implements OnInit {
 
     this.imagesService.getAllImages().subscribe(images => {
       // concat - מחבר 2 מערכים
-      // images = images.slice(0, 2);
+      images = images.slice(0, 2);
       this.images = images.concat(images);
       this.images = this.shuffle(this.images);
     });
@@ -127,7 +127,6 @@ export class GameComponent implements OnInit {
 
         }
         // this.router.navigateByUrl('/game');
-
       });
     }
   }

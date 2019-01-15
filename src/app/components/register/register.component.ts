@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
-// import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
 
@@ -12,28 +11,11 @@ import Swal from 'sweetalert2';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-
   public user: User = new User();
-
-  // registerForm: FormGroup;
-  // submitted = false;
 
   constructor(private userService: UserService, private router: Router) { }
 
-  ngOnInit() {
-
-    // this.registerForm = this.formBuilder.group({
-    //   fullName: ['', '', Validators.required],
-    //   lastName: ['', Validators.required],
-    //   email: ['', [Validators.required, Validators.email]],
-    //   password: ['', [Validators.required, Validators.minLength(6)]],
-    // });
-  }
-
-  // convenience getter for easy access to form fields
-  // get f() { return this.registerForm.controls; }
-
-
+  ngOnInit() { }
 
   send() {
     if (!this.user.userName || !this.user.password || !this.user.fullName) {

@@ -1,6 +1,8 @@
 <div class="userResult">
+  <button type="button" class="btn-Newgame btn btn-danger" (click)="refresh()">New Game</button>
   <p class="text-black">Steps: {{stepsCounter}}</p>
   <p class="text-black">Time: <app-clock></app-clock>
+  </p>
 </div>
 
 <div class="memory-game">
@@ -12,5 +14,3 @@
     </div>
   </div>
 </div>
-
-<button type="button" class="btn-Newgame btn btn-danger" (click)="refresh()">New Game</button>

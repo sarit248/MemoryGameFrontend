@@ -6,10 +6,6 @@ export class GameResult {
   public datePlayed: Date;
   public userName: string;
   public gameSessionLength: any;
-  // public gameSessionLength: Date;
-
-
 
   public constructor() { }
-
 }

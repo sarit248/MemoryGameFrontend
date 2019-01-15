@@ -1,26 +1,35 @@
-<h1 class="GameResults-headline">Game Results</h1>
+<div class="container">
+  <h1 class="GameResults-headline">Game Results</h1>
+  <div class="table-responsive">
+    <div class="table-wrapper-scroll-y">
+      <table class="table table-striped table-dark">
 
-<div class="table-wrapper-scroll-y">
-  <table class="table table-striped table-dark  ">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Date and Time</th>
-        <th scope="col">Full Name</th>
-        <th scope="col">User Name</th>
-        <th scope="col">Game Session Lenght</th>
-        <th scope="col">Number of moves</th>
-      </tr>
-    </thead>
-    <tbody *ngIf='gameResult' class="table-body">
-      <tr *ngFor="let result of gameResult.reverse(); let i = index">
-        <th scope="row">{{i+1}}</th>
-        <td>{{result.datePlayed | date:' MMMM dd, yyyy , h:mm a'}}</td>
-        <td>{{result.userFullName}}</td>
-        <td>{{result.userName}}</td>
-        <!-- <td align="center">{{result.gameSessionLength}}</td> -->
-        <td align="center">{{result.gameSessionLength | minuteSeconds }}</td>
-        <td align="center">{{result.stepsTaken}}</td>
-      </tr>
-    </tbody>
-  </table>
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Date and Time</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Game Session Lenght</th>
+            <th scope="col">Number of moves</th>
+          </tr>
+        </thead>
+        <tbody *ngIf='gameResult' class="table-body">
+          <tr *ngFor="let result of gameResult  | reverse ; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <!-- <td>{{result.datePlayed | date:' MMMM dd, yyyy , h:mm a ' : '+360'}}</td> -->
+            <td>{{result.datePlayed | date:'short' : '+360'}}</td>
+
+            <!-- <td>{{result.myDate | date:' MMMM dd, yyyy , h:mm a '}}</td> -->
+            <!-- <td>{{result.datePlayed | date:'MMM d, y h:mm:ss a Z'}}</td> -->
+
+            <td align="center">{{result.userFullName}}</td>
+            <td align="center">{{result.userName}}</td>
+            <td align="center">{{result.gameSessionLength | minuteSeconds }}</td>
+            <td align="center">{{result.stepsTaken}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

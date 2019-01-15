@@ -8,23 +8,6 @@ import { ClockService } from 'src/app/services/clock.service';
   styleUrls: ['./clock.component.scss']
 })
 export class ClockComponent implements OnInit, OnDestroy {
-  //   private tick: number;
-  //   private subscription: Subscription;
-
-  //   constructor() {
-  //   }
-
-  //   ngOnInit() {
-  //     const timer = TimerObservable.create(2000, 1000);
-  //     this.subscription = timer.subscribe(t => {
-  //       this.tick = t;
-  //     });
-  //   }
-
-  //   ngOnDestroy() {
-  //     this.subscription.unsubscribe();
-  //   }
-  // }
   private clockSubscription: Subscription;
   public seconds = 0;
 
@@ -41,5 +24,4 @@ export class ClockComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.clockSubscription.unsubscribe();
   }
-
 }

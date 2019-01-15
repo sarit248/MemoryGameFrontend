@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -8,7 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+  public login = true;
   public navigations: Array<string>;
+
 
   constructor(private router: Router) { }
 
@@ -22,8 +24,6 @@ export class MenuComponent implements OnInit {
       'Contact-Us',
       'About',
     ];
-
-
   }
 
   logOut() {
@@ -31,8 +31,7 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['/entrance']);
   }
 
-  logIn() {
-    this.router.navigate(['/login']);
-  }
-
+  // logIn() {
+  //   this.router.navigate(['/login']);
+  // }
 }

@@ -21,9 +21,9 @@ export class LoginComponent implements OnInit {
     if (!this.user.userName || !this.user.password) {
       Swal('Login', 'One of the areas is missing, try again', 'error');
     } else {
-      this.userService.getUser(this.user).subscribe(u => {
-        if (u) {
-          sessionStorage.setItem('userID', u.userID.toString());
+      this.userService.getUser(this.user).subscribe(user => {
+        if (user) {
+          sessionStorage.setItem('userID', user.userID.toString());
           this.router.navigate(['/home']);
         } else {
           Swal('Login', 'Incorrect user-name or password, please fill in and try again', 'error');
@@ -31,4 +31,6 @@ export class LoginComponent implements OnInit {
       });
     }
   }
+
+
 }

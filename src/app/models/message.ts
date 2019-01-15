@@ -4,5 +4,6 @@ export class Message {
   public email?: string;
   public message: string;
   public dateAdded: Date;
+
   public constructor() { }
 }

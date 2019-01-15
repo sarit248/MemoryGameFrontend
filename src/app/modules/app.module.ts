@@ -8,7 +8,6 @@ import { MenuComponent } from '../components/menu/menu.component';
 import { LoginComponent } from '../components/login/login.component';
 import { RegisterComponent } from '../components/register/register.component';
 import { FeedbackComponent } from '../components/feedback/feedback.component';
-import { ThumbnailComponent } from '../components/thumbnail/thumbnail.component';
 import { AboutComponent } from '../components/about/about.component';
 import { GameResultsComponent } from '../components/game-results/game-results.component';
 import { ContactUsComponent } from '../components/contact-us/contact-us.component';
@@ -25,9 +24,11 @@ import { GameComponent } from '../components/game/game.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EntranceComponent } from '../components/entrance/entrance.component';
 import { FeedbacksComponent } from '../components/feedbacks/feedbacks.component';
-import swal from 'sweetalert2';
 import { MinuteSecondsPipe } from '../pipes/minuteSeconds.pipe';
+import { ReversePipe } from '../pipes/Reverse.pipe';
 import { ClockComponent } from '../components/clock/clock.component';
+// import { MomentModule } from 'angular2-moment';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +39,6 @@ import { ClockComponent } from '../components/clock/clock.component';
     LoginComponent,
     RegisterComponent,
     FeedbackComponent,
-    ThumbnailComponent,
     AboutComponent,
     GameResultsComponent,
     ContactUsComponent,
@@ -46,7 +46,9 @@ import { ClockComponent } from '../components/clock/clock.component';
     EntranceComponent,
     FeedbacksComponent,
     MinuteSecondsPipe,
-    ClockComponent
+    ReversePipe,
+    ClockComponent,
+    // MomentModule
     // NgbModule
   ],
   imports: [

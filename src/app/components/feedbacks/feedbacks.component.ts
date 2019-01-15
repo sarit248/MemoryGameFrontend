@@ -9,16 +9,18 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./feedbacks.component.scss']
 })
 export class FeedbacksComponent implements OnInit {
-  public Userfeedbacks: UserFeedback[];
+  public userFeedbacks: UserFeedback[];
 
   constructor(private userFeedbackService: UsersFeedbackService, private userService: UserService) { }
 
   ngOnInit() {
-    const feedbacks = this.userFeedbackService.GetAllFeedbacks();
-    feedbacks.subscribe(Userfeedbacks => {
-      this.Userfeedbacks = Userfeedbacks;
-      console.log(this.Userfeedbacks);
-    });
+    // const feedbacks = this.userFeedbackService.GetAllFeedbacks();
+    // feedbacks.subscribe(Userfeedbacks => {
+    //   this.Userfeedbacks = Userfeedbacks;
+    //   console.log(this.Userfeedbacks);
+    // });
+    this.userFeedbackService.GetAllFeedbacks().subscribe(feedbacks => this.userFeedbacks = feedbacks);
+
   }
 }
 

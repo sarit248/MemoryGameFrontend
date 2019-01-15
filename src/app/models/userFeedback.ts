@@ -1,5 +1,4 @@
 export class UserFeedback {
-
   public userID: number;
   public feedbackID: number;
   public userFullName: string;

@@ -5,46 +5,60 @@
     background-repeat: no-repeat;
     background-size: 120% 120%;
     height: 120%;
-  }
-  
-  .flex-container > div {
+}
+
+.flex-container>div {
     float: right;
     height: -webkit-fill-available;
     background-color: white;
     width: 40%;
-  }
-  .contact {
+}
+
+.contact {
     color: #008cba;
     font-family: Arial;
     font-weight: bold;
     text-align: center;
     margin-left: auto;
     margin-top: 20%;
-    }
-  
-  form {
+}
+
+form {
     width: 100%;
     text-align: center;
-  }
-  
-  input,
-  button,
-   {
+}
+
+input,
+button,
+    {
     width: 400px;
     font-size: medium;
     margin: 5px;
-  }
-  
-  button {
+}
+
+button {
     background-color: lightblue;
     color: #008cba;
     border: 2px lightblue;
     border-radius: 10px;
     width: 300px;
     font-weight: bold;
-  }
-  
-  textarea{
-  width: 200px;
-  position: relative;
-  }
+}
+
+textarea {
+    width: 200px;
+    position: relative;
+}
+
+@media only screen and (max-width: 768px) {
+    .flex-container>div {
+        background-color: white;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width:1024px) {
+    .flex-container {
+        background-size: 123% 93%;
+    }
+}
