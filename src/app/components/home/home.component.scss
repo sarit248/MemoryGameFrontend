@@ -29,13 +29,13 @@ body {
     background-size: auto;
 }
 
-.memory-game {
+.memory-game-img {
     background-image: url('/assets/images/gameImage2.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     object-fit: contain;
-    width: 465px;
-    height: 404px;
+    width: 465px; 
+    height: 365px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -55,7 +55,7 @@ body {
 }
 
 @media only screen and (max-width: 768px) and(max-width:425px) {
-    .memory-game {
+    .memory-game-img {
         width: 290px;
         height: 344px;
     }
@@ -66,16 +66,28 @@ body {
     }
 }
 
-@media only screen and (min-width: 1440px) and(max-width:2560px) {
+@media only screen and (min-width: 769px) and(max-width:1440px) {
     .memory-game {
+        max-width: 500px;
+        max-height: 344px;
+    }
+    .userResult {
+        font-size: 27px;
+    }
+}
+
+@media only screen and (min-width: 1441px) and(max-width:2560px) {
+    .memory-game-img {
         width: 700px;
         height: 600px;
+        margin-top: -5%
     }
 }
 
 @media only screen and (min-width: 2560px) {
-    .memory-game {
+    .memory-game-img {
         width: 700px;
         height: 600px;
+        margin-top: 0%;
     }
 }

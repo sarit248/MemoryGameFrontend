@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent implements OnInit {
   public user: User = new User();
+
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {

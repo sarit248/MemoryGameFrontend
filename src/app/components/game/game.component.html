@@ -8,9 +8,8 @@
 <div class="memory-game">
   <div class="memory-card" id="{{image.imageName}}" *ngFor="let image of images" (click)="pickCard($event, image)">
     <div [hidden]="image.isUncovered">
-      <img class="front-face" src="assets/images/cardsImages/{{ image.imageName }}" height="159px" width="150px" alt="Memory Card" />
-
-      <img class="back-face" src="assets/images/cardsImages/card.jpg" height="159px" width="150px" alt="Memory Card" />
+      <img class="front-face" src="assets/images/cardsImages/{{ image.imageName }}" alt="Memory Card" />
+      <img class="back-face" src="assets/images/cardsImages/card.jpg" alt="Memory Card" />
     </div>
   </div>
 </div>

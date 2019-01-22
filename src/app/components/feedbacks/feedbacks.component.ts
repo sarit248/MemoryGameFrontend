@@ -14,13 +14,7 @@ export class FeedbacksComponent implements OnInit {
   constructor(private userFeedbackService: UsersFeedbackService, private userService: UserService) { }
 
   ngOnInit() {
-    // const feedbacks = this.userFeedbackService.GetAllFeedbacks();
-    // feedbacks.subscribe(Userfeedbacks => {
-    //   this.Userfeedbacks = Userfeedbacks;
-    //   console.log(this.Userfeedbacks);
-    // });
     this.userFeedbackService.GetAllFeedbacks().subscribe(feedbacks => this.userFeedbacks = feedbacks);
-
   }
 }
 

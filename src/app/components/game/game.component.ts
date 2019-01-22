@@ -1,18 +1,13 @@
 import { UserService } from './../../services/user.service';
-// import { CardsImagesService } from './../../services/cards-images.service';
 import { Component, OnInit } from '@angular/core';
 import { Image } from '../../models/Image';
 import { ImagesService } from '../../services/images.service';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
-import { interval } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { GameResult } from 'src/app/models/gameResult';
 import { GameResultsService } from 'src/app/services/game-results.service';
 import Swal from 'sweetalert2';
-import { Location } from '@angular/common';
 import { ClockService } from 'src/app/services/clock.service';
-
 
 
 @Component({
@@ -21,7 +16,6 @@ import { ClockService } from 'src/app/services/clock.service';
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
-  // public cardsImages: Image[];
   public images: Image[];
   public user: User;
   public imageOneElement;
@@ -48,8 +42,6 @@ export class GameComponent implements OnInit {
     this.stepsCounter = 0;
 
     this.imagesService.getAllImages().subscribe(images => {
-      // concat - מחבר 2 מערכים
-      images = images.slice(0, 2);
       this.images = images.concat(images);
       this.images = this.shuffle(this.images);
     });
@@ -71,10 +63,9 @@ export class GameComponent implements OnInit {
       (!this.imageOne || this.imageOneElement !== event.currentTarget)) {
       this.stepsCounter++;
 
-      event.currentTarget.classList.toggle('flip'); // To toggle
+      event.currentTarget.classList.toggle('flip');
       this.amountOfOpenCards++;
       if (!this.imageOne) {
-        //   אם אין כלום באימג' אחד אז תכניס את קארד לאימג' אחד
         this.imageOne = card;
         this.imageOneElement = event.currentTarget;
       } else {
@@ -88,7 +79,6 @@ export class GameComponent implements OnInit {
             this.images.find(
               i => i.imageID === this.imageTwo.imageID
             ).isUncovered = true;
-
             // Check if game is done
             this.checkGameOver();
           }
@@ -124,9 +114,7 @@ export class GameComponent implements OnInit {
       this.gameResultsServie.AddGameResult(gameResult).subscribe(g => {
         if (g) {
           Swal('You did it!', 'Great job!', 'success');
-
         }
-        // this.router.navigateByUrl('/game');
       });
     }
   }
@@ -144,18 +132,11 @@ export class GameComponent implements OnInit {
       // Pick a remaining element...
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
-
       // And swap it with the current element.
       temporaryValue = array[currentIndex];
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
     }
-
     return array;
   }
-
-  // goBack(): void {
-  //   this.location.back();
-  // }
-
 }

@@ -17,12 +17,7 @@
         <tbody *ngIf='gameResult' class="table-body">
           <tr *ngFor="let result of gameResult  | reverse ; let i = index">
             <th scope="row">{{i+1}}</th>
-            <!-- <td>{{result.datePlayed | date:' MMMM dd, yyyy , h:mm a ' : '+360'}}</td> -->
             <td>{{result.datePlayed | date:'short' : '+360'}}</td>
-
-            <!-- <td>{{result.myDate | date:' MMMM dd, yyyy , h:mm a '}}</td> -->
-            <!-- <td>{{result.datePlayed | date:'MMM d, y h:mm:ss a Z'}}</td> -->
-
             <td align="center">{{result.userFullName}}</td>
             <td align="center">{{result.userName}}</td>
             <td align="center">{{result.gameSessionLength | minuteSeconds }}</td>

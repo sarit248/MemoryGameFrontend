@@ -8,8 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  public login = true;
+  public login = false;
   public navigations: Array<string>;
+
 
 
   constructor(private router: Router) { }
@@ -30,8 +31,4 @@ export class MenuComponent implements OnInit {
     sessionStorage.removeItem('userID');
     this.router.navigate(['/entrance']);
   }
-
-  // logIn() {
-  //   this.router.navigate(['/login']);
-  // }
 }
