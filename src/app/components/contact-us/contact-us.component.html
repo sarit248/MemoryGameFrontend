@@ -3,14 +3,14 @@
     <div class="contact">
       <h4>Get in Touch</h4>
       <h5>Please fill out the form and we'll be in touch soon</h5>
-      <form #myForm="ngForm" (ngSubmit)="send(); myForm.reset()">
+      <form #userForm="ngForm" (ngSubmit)="send(); userForm.reset()">
 
         <div>
           <mat-form-field>
             <input matInput type="text" name="phone" ngModel pattern="^\s*(?:\+?\d{1,3})?[- (]*\d{3}(?:[- )]*\d{3})?[- ]*\d{4}(?: *[x/#]\d+)?\s*$"
-              placeholder="phone number..." [(ngModel)]="contact.phone" phone required #phone="ngModel" />
+              placeholder="phone number..." [(ngModel)]="contact.phone" #phone="ngModel" />
           </mat-form-field>
-          <span *ngIf="phone.dirty">Invalid / Missing Phone.</span>
+          <span *ngIf="phone.dirty && phone.invalid">Invalid Phone.</span>
         </div>
 
         <div>
@@ -30,7 +30,7 @@
         </div>
 
         <div>
-          <div><button>Go-Ahead</button></div>
+          <button [disabled]="userForm.form.invalid">Go-Ahead</button>
         </div>
       </form>
     </div>

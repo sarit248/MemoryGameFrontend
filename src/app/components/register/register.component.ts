@@ -12,10 +12,14 @@ import Swal from 'sweetalert2';
 })
 export class RegisterComponent implements OnInit {
   public user: User = new User();
+  public minDate = new Date(1900, 0, 1);
+  public maxDate = new Date();
+
 
   constructor(private userService: UserService, private router: Router) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
 
   send() {
     if (!this.user.userName || !this.user.password || !this.user.fullName) {
@@ -30,7 +34,5 @@ export class RegisterComponent implements OnInit {
         }
       });
     }
-
   }
 }
-

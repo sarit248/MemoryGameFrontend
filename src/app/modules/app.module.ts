@@ -17,7 +17,9 @@ import {
   MatIconModule,
   MatInputModule,
   MatButtonModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 } from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { GameComponent } from '../components/game/game.component';
@@ -27,7 +29,6 @@ import { FeedbacksComponent } from '../components/feedbacks/feedbacks.component'
 import { MinuteSecondsPipe } from '../pipes/minuteSeconds.pipe';
 import { ReversePipe } from '../pipes/Reverse.pipe';
 import { ClockComponent } from '../components/clock/clock.component';
-// import { MomentModule } from 'angular2-moment';
 
 
 @NgModule({
@@ -48,8 +49,7 @@ import { ClockComponent } from '../components/clock/clock.component';
     MinuteSecondsPipe,
     ReversePipe,
     ClockComponent,
-    // MomentModule
-    // NgbModule
+
   ],
   imports: [
     BrowserModule,
@@ -60,9 +60,10 @@ import { ClockComponent } from '../components/clock/clock.component';
     MatButtonModule,
     MatCheckboxModule,
     MatIconModule,
+    MatDatepickerModule,
     NgbModule,
     HttpClientModule,
-    // ReactiveFormsModule
+    MatNativeDateModule,
 
   ],
   providers: [],

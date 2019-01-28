@@ -3,13 +3,13 @@
     <div class="feedback">
       <h4>Feedback</h4>
       <h5>Please write down your feedbck !</h5>
-      <form #myForm="ngForm" (ngSubmit)="send()">
+      <form #userForm="ngForm" (ngSubmit)="send()">
         <div>
           <mat-form-field><textarea matInput type="text" name="message" rows="5" cols="40" [(ngModel)]="feedback.feedbackText"
               placeholder=" Your Feedback..." required #feedbackMessage="ngModel"></textarea></mat-form-field>
           <div *ngIf="feedbackMessage.dirty && feedbackMessage.invalid">Missing Feedback.</div>
         </div>
-        <div><button>Go-Ahead</button></div>
+        <button [disabled]="userForm.form.invalid">Go-Ahead</button>
       </form>
     </div>
   </div>

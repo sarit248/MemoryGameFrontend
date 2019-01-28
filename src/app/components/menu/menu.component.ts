@@ -12,7 +12,6 @@ export class MenuComponent implements OnInit {
   public navigations: Array<string>;
 
 
-
   constructor(private router: Router) { }
 
   ngOnInit() {

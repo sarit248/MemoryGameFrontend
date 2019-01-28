@@ -3,7 +3,7 @@
     <div class="log">
       <h4>Log-in</h4>
       <h5>We are happy to see you!</h5>
-      <form #myForm="ngForm" (ngSubmit)="send()">
+      <form #userForm="ngForm" (ngSubmit)="userForm.form.valid && send()">
         <div>
           <mat-form-field>
             <input matInput type="text" name="User Name" placeholder="User Name..." autofocus required [(ngModel)]="user.userName"
@@ -18,7 +18,7 @@
           </mat-form-field>
           <span *ngIf="password.dirty && password.invalid">Missing Password.</span>
         </div>
-        <div><button>Go-Ahead</button></div>
+        <div><button [disabled]="userForm.form.invalid">Go-Ahead</button></div>
       </form>
     </div>
   </div>

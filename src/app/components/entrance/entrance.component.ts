@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./entrance.component.scss']
 })
 export class EntranceComponent implements OnInit {
+  public title: string;
 
   constructor() { }
 
   ngOnInit() {
+    this.title = 'the memory game';
   }
 
 }
